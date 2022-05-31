@@ -77,9 +77,29 @@ body{
     }
 }
 
+
+
+
 #carouselButton {
     position: absolute;
     right: 0px;
     bottom: 0px;
     z-index: 1;
+}
+
+#loginmodal, #reservemodal {
+    .modal-header {
+        background-color: $background-dark;
+        color: floralwhite;
+        
+        span {
+            color: floralwhite;
+        }
+    };
+
+    .modal-body {
+        background-color: $background-pale;
+
+    }
+
 }
