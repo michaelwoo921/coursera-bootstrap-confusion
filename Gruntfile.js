@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(grunt){
+    const sass = require('node-sass');
 
     require('time-grunt')(grunt);
 
@@ -16,6 +17,9 @@ module.exports = function(grunt){
                 files: {
                     'css/styles.css': 'css/styles.scss'
                 }
+            },
+            options: {
+                implementation: sass
             }
         },
         watch: {
@@ -127,9 +131,19 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('css', ['sass'] );
+    grunt.registerTask('default', ['browserSync', 'watch'] );
 
     grunt.registerTask('build', [
-        'clean', 'copy', 'imagemin', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin'
+        'clean', 
+        'copy', 
+        'imagemin',
+        'useminPrepare', 
+        'concat', 
+        'cssmin', 
+        'uglify', 
+        'filerev', 
+        'usemin', 
+        'htmlmin'
     ])
 }
 
